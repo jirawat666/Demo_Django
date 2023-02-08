@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>First Title</title>
+</head>
+
+<body>
+<center><h1>welcome</h1></center>
+<h1>welcome2</h1>
+<a href="noway">Click to view registration from</a>
+<img src="{% static 'image/scope.jpg' %}" alt="home" width="60" height="60"/>
+<input type="text" id="textbox">
+<button type="button" id="button">Submit</button>
+    <script>
+window.onload = function() {
+  document.getElementById("button").addEventListener("click", function(event){
+    event.preventDefault();
+    var textboxValue = document.getElementById("textbox").value;
+    window.location.href = "/show_data/?text=" + textboxValue;
+  });
+};
+    </script>
+</body>
+</html>
